@@ -1,0 +1,35 @@
+//Book objects have an int 'id' and a String 'name'
+
+
+    public static int binarySearch(ArrayList<Book> books, long searchedId) {
+        int location = -1;
+        
+        int middle = (books.size()-1)/2;
+        int start = 0;
+        int end = (books.size()-1);
+        
+        while(start <= end){
+            
+            if (books.get(middle).getId() == searchedId){
+                
+                return middle;
+            }
+            
+            if (books.get(middle).getId() < searchedId){
+                start = middle+1;
+            } 
+            
+            if (books.get(middle).getId() > searchedId) {
+                end = middle+1;
+            }
+            
+            middle = (end + start) / 2;
+            
+              
+        }
+        
+        
+        return location;
+    }
+}
+
